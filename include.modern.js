@@ -1,7 +1,7 @@
 (() => {
     let setAttr = (a, b) => Object.keys(b).forEach(k => a.setAttribute(k, b[k])) || a;
     let onLoad = (a, b) => a.addEventListener("load", b, false) || a;
-    let FNToMN = (s) => s.slice(s.length - 3) === ".js" ? s.slice(0, s.length - 3) : s;
+    let FNToMN = (s) => s.slice(s.length - 3) === ".js" ? s.slice(2, s.length - 3) : s;
     let include = (Object.getPrototypeOf(this.constructor.prototype) !== null && Object.getPrototypeOf(this.constructor.prototype).constructor.name === "WorkerGlobalScope") ?
             importScripts
         : this.constructor.name === "Object" ?

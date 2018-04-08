@@ -11,7 +11,40 @@ npm install include.modern
 let include = require("include.modern");
 //You can do it like a importScripts
 
-let myDeamon = include("http", "express", {io: "socket.io"});
+/*
+The means of same...
+
+let http = require("http"),
+    express = require("express"),
+    myCtrls = require(./myCtrls.js);
+*/
+
+include("http", "express",  "./myCtrls.js");
+
+//define global
+
+include("http", "express",  "./myCtrls.js", {
+    io: "socket.io",
+    myClass: "./my.class.js"
+    myTemplate: ./template/my.template.js
+});
+
+
+/*
+The means of same...
+let ctrls = {
+    route: require("./route.js"),
+    index: require("./controller/index.controller.js"),
+    foo: require("./controller/foo.controller.js"),
+    bar: require("./controller/bar.controller.js")
+}
+*/
+
+let ctrls = ("./route.js", {
+    index: "./controller/index.controller.js",
+    foo: "./controller/foo.controller.js",
+    bar: "./controller/bar.controller.js"
+}, {});
 
 ~~~
 
