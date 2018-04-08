@@ -2,10 +2,11 @@ let include = (Object.getPrototypeOf(this.constructor.prototype) !== null && Obj
         importScripts
     : this.constructor.name === "Object" ?
         function (...a) {
-            switch (a[0].constructor) {
-                case String: return a.reduceRight((p, c) => Object.assign(p.constructor === String ? this : p, {[c.search(".js") > 0 ? c.replace(".js", "") : c]: require(c)}));
-                case Object: return a.reduce((p, c) => Object.assign(p, {[c.search(".js") > 0 ? c.replace(".js", "") : c]: require(c)}));
-            }
+            return a.reduceRight((p, c) => Object.assign(p, c.constructor === Object ?
+                Object.keys(c).forEach((k) => c[k] = require(c[k])) || c
+            :
+                {[c.slice(c.length - 3) === ".js" ? c.slice(0, c.length - 3) : c]: require(c)}
+            ), a[a.length - 1].constructor === String ? this : a.pop());
         }
     :
         function (...a) {
