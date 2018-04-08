@@ -10,7 +10,7 @@
                     Object.keys(c).forEach((k) => c[k] = require(c[k])) || c
                 :
                     {[FNToMN(c)]: require(c)}
-                ), a[a.length - 1].constructor === String ? this : a.pop());
+                ), (a[a.length - 1].constructor === String || Object.keys(a[a.length - 1]).length > 0) ? this : a.pop());
             }
         :
             function (...a) {
