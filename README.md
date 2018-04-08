@@ -1,7 +1,27 @@
 # include.modern
 All Platform use to like importScripts function
 
-## usage
+# usage
+
+## make a module
+
+### ex1
+~~~javascript
+    this.constructor.name === "Object" ? module.exports = myModule: Object.assign(this, {myModule});
+~~~
+
+### ex2: Using is.modern
+~~~javascript
+    is.server ? module.exports = myModule: Object.assign(this, {myModule});
+~~~
+
+### ex3: Using is.modern
+~~~javascript
+    is.server && (module.exports = myModule)
+    is.server || Object.assign(this, {myModule});
+~~~
+
+## including
 
 ### Node.js
 
@@ -26,7 +46,7 @@ include("http", "express",  "./myCtrls.js");
 include("http", "express",  "./myCtrls.js", {
     io: "socket.io",
     myClass: "./my.class.js"
-    myTemplate: ./template/my.template.js
+    myTemplate: "./template/my.template.js"
 });
 
 
@@ -53,10 +73,10 @@ let ctrls = ("./route.js", {
 Download this repository.
 
 ~~~javascript
-let include = importScripts("./my_js_folder/include.modern.js");
+let include = importScripts("../my_js_folder/include.modern.js");
 //You can do it like a importScripts
 
-include("my0.js", "my1.js", "my2.js");
+include("./my0.js", "./my1.js", "./my2.js");
 ~~~
 
 ### Browser
@@ -70,7 +90,7 @@ and my.js file can use
 
 ~~~javascript
 //You can do it like a importScripts
-include("my0.js", "my1.js", "my2.js");
+include("./js/my0.js", "./js/my1.js", "./js/my2.js");
 ~~~
 
 Happy Hacking!!!
