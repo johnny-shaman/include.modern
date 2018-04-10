@@ -43,29 +43,29 @@ include("http", "express",  "./myCtrls.js");
 
 //define global
 
-include("http", "express",  "./myCtrls.js", {
+include("http", "express", "./myCtrls.js", {
     io: "socket.io",
     myClass: "./my.class.js"
     myTemplate: "./template/my.template.js"
 });
 
-
 /*
 The means of same...
 let ctrls = {
     route: require("./route.js"),
-    index: require("./controller/index.controller.js"),
-    foo: require("./controller/foo.controller.js"),
-    bar: require("./controller/bar.controller.js")
+    index: require("./controllers/index.js"),
+    foo: require("./controllers/foo.js"),
+    bar: require("./controllers/bar.js")
 }
 */
 
-let ctrls = ("./route.js", {
-    index: "./controller/index.controller.js",
-    foo: "./controller/foo.controller.js",
-    bar: "./controller/bar.controller.js"
+const path = "./controllers/";
+include.setPath(path);
+let ctrls = include("./route.js", {
+    index: path + "index.js",
+    foo: path + "foo.js",
+    bar: path + "bar.js"
 }, {});
-
 ~~~
 
 ### Worker

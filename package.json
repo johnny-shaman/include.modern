@@ -1,6 +1,6 @@
 {
   "name": "include.modern",
-  "version": "0.2.1",
+  "version": "0.2.5",
   "description": "All Platform use to like importScripts function",
   "main": "include.modern.js",
   "scripts": {
@@ -12,9 +12,12 @@
   },
   "keywords": [
     "import",
-    "importScript",
+    "importScripts",
     "include",
-    "require"
+    "require",
+    "server",
+    "worker",
+    "browser",
   ],
   "author": "Noboru Okazaki",
   "license": "GPL-3.0",
