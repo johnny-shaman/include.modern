@@ -89,8 +89,13 @@ insert first this tag and
 and my.js file can use
 
 ~~~javascript
-//You can do it like a importScripts
-include("./js/my0.js", "./js/my1.js", "./js/my2.js");
+/*
+You can do it like a importScripts && return Promise and Promise.then === Promise.defer
+As You like to use it!
+*/
+include("./js/my0.js", "./js/my1.js", "./js/my2.js").defer(() => {
+    //scripting here
+});
 ~~~
 
 Happy Hacking!!!
