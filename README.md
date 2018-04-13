@@ -81,11 +81,12 @@ include("./my0.js", "./my1.js", "./my2.js");
 
 ### Browser
 
-insert first this tag and
+insert first this tag
 ~~~html
-<script src="./my_js_folder/include.modern.js"　async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/include.modern/include.modern.min.js" async defer></script>
 <script src="./my_module_folder/my.js" defer></script>
 ~~~
+
 and my.js file can use
 
 ~~~javascript

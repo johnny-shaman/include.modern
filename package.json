@@ -1,6 +1,6 @@
 {
   "name": "include.modern",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "All Platform use to like importScripts function",
   "main": "include.modern.js",
   "scripts": {
